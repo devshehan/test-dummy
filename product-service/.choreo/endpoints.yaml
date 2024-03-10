@@ -4,7 +4,7 @@ version: 0.1
 # +required List of endpoints to create
 endpoints:
 
-  - name: Product Catalog
+  - name: Product
     port: 8080
     type: REST
     networkVisibility: Public
