@@ -1,3 +1,5 @@
+server:
+  port: 8080
 spring:
   datasource:
     url: jdbc:postgresql://pg-d1a458a5-79c5-4b90-8a8c-8332ea73b1c9-productd3159293544-chor.a.aivencloud.com:25731/defaultdb
@@ -5,7 +7,7 @@ spring:
     password: AVNS_J-xqovcsjkV7zTnbA0G
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
