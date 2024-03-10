@@ -6,8 +6,6 @@ spring:
     username: avnadmin
     password: AVNS_J-xqovcsjkV7zTnbA0G
   jpa:
-    hibernate:
-      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
