@@ -15,21 +15,81 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-                id : "IPhone X"
-                description : "Imported from thai land"
-                price : 100.00
+              properties:
+                id:
+                  type: string
+                  description: The product ID
+                description:
+                  type: string
+                  description: The product description
+                price:
+                  type: number
+                  description: The product price
+              required:
+                - id
+                - description
+                - price
       responses:
         '201':
           description: Successfully product created
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: A message indicating the product was successfully created
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: A message indicating the request was invalid
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: A message indicating something went wrong on the server
     get:
       tags:
         - default
       summary: get
       responses:
-        200:
+        '200':
           description: Successful Response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: The product ID
+                    description:
+                      type: string
+                      description: The product description
+                    price:
+                      type: number
+                      description: The product price
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: A message indicating something went wrong on the server
