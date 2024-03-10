@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: 'product-api'
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/product:
+    post:
+      tags:
+        - default
+      summary: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id : "IPhone X"
+                description : "Imported from thai land"
+                price : 100.00
+      responses:
+        '201':
+          description: Successfully product created
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: get
+      responses:
+        200:
+          description: Successful Response
+          content:
+            application/json: {}
